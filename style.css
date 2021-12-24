@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap"); /*importing fonts*/
+/* it is a universal sector for the whole page of website*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  font-family: "Ubuntu", sans-serif;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:root {
+  --white-color: #fffffff1;
+  --main-color: #443;
+  --brown-color: #461111;
+  --border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+  --border-radius-hover: 4% 95% 6% 95%/95% 4% 92% 5%;
+  --border: 0.2rem solid var(--main-color);
+  --border-hover: 0.2rem double var(--main-color);
+}
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 0.07rem var(--brown-color);
+  letter-spacing: 0.2rem;
+  text-align: center;
+  pointer-events: none;
+  position: relative;
+  padding: 5px;
+}
+
+.heading span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: var(--brown-color);
+  font-size: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--border-radius);
+  color: var(--brown-color);
+  background: none;
+  border: var(--border);
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.7rem;
+}
+
+.btn:hover {
+  border-radius: var(--border-radius-hover);
+  border: var(--border-hover);
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+/* navbar styling*/
+.navbar {
+  position: fixed !important;
+  width: 100%;
+  padding: 0px 0;
+  /*background: crimson;*/
+
+  z-index: 999;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+}
+/*!important rule, it will override ALL previous styling rules for that specific property on that element!*/
+
+.navbar.sticky {
+  /*if we have two class of one element then dont give space */
+  padding: 0 0;
+  padding: 0 0;
+  background-color: #461111;
+  
+  color: var(--white-color);
+  left: 0;
+  right: 0;
+}
+.navbar.sticky .logo a {
+  color: var(--white-color);
+}
+.navbar.sticky .menu a {
+  color: var(--white-color) !important;
+}
+
+.navbar .max-width {
+  display: flex;
+  margin: auto; /*vertically align*/
+  justify-content: space-between;
+}
+.navbar .logo {
+  margin-top: 5px;
+  padding: 0;
+}
+.navbar .logo a {
+  color: var(--brown-color);
+  font-size: 50px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .logo a span {
+  color: crimson;
+}
+.menu {
+  margin-left: 310px;
+}
+.navbar .menu li {
+  padding-top: 30px;
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  color: var(--brown-color);
+  text-decoration: none;
+  transition: color 0.3s ease; /*can change value with mouse over*/
+}
+.navbar .menu li a:hover {
+  color: crimson;
+}
+
+/*menu-button styling*/
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+/* home section stylling*/
+.home {
+  display: flex;
+  background-image: url("images/5310800.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 700px;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--brown-color);
+  opacity: 1;
+}
+
+.home .max-width {
+  align-items: center;
+  text-align: center;
+  display: flex;
+
+  margin-top: 250px;
+  opacity: 5;
+}
+.home .max-width .home-content {
+  text-align: left;
+  margin-left: 600px;
+  width: 700px;
+}
+.home .max-width .home-content h1 {
+  font-size: 3.1rem;
+  padding: 9px;
+}
+
+/* services */
+.ourServices {
+  color: var(--brown-color);
+  background-repeat: no-repeat;
+  background-size: 100% 550px;
+  width: 100%;
+  padding-bottom: 90px;
+}
+.ourServices .container {
+  display: flex;
+  gap: 1.5rem;
+}
+/* .about {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+} */
+.ourServices .container .service-img {
+  flex: 1 1 42rem;
+  margin-top: 23px;
+}
+
+.ourServices .container .service-img img {
+  height: 400px;
+  width: 400px;
+  animation: image 4s linear infinite;
+}
+@keyframes image {
+  0%,
+  100% {
+    transform: scale(0.9);
+    border-radius: var(--border-radius-hover);
+  }
+  50% {
+    transform: scale(0.8);
+    border-radius: var(--border-radius);
+  }
+}
+.ourServices .container .services {
+  margin-left: 30px;
+}
+.ourServices .container .services .heading-services {
+  margin-top: 50px;
+  line-height: 1.8;
+}
+.ourServices .container .services .heading-services a {
+  margin-top: 0px;
+}
+.ourServices .container .services .all-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ourServices .container .services .all-services .icon-details {
+  flex: 1 1 10rem;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 23px;
+
+  align-content: center;
+  justify-content: center;
+}
+.ourServices .container .services .all-services .icon-details img {
+  height: 60px;
+  width: 60px;
+}
+/* menu section */
+
+.menu-class .menu {
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  text-align: center;
+}
+.menu-class {
+  background-image: url("images/table.png");
+  background-repeat: no-repeat;
+  background-size: 100% 1100px;
+  margin-top: 0px;
+  padding: 0 0;
+}
+
+.menulist {
+  max-width: 900px;
+  margin-top: 30px;
+}
+.menulist ul li {
+  list-style: none;
+  display: flex;
+}
+.menulist .menu-img img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.menulist .menu-details {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.menulist .menu-details p {
+  font-size: 1rem;
+}
+.menulist .first-row {
+  display: flex;
+  width: 400px;
+  margin-left: 10px;
+
+  margin-bottom: 15px;
+}
+
+.menulist .another-row {
+  margin-left: 50px;
+  display: flex;
+
+  width: 400px;
+
+  margin-bottom: 15px;
+}
+
+/* testimonial */
+.review .review-slider {
+  padding: 4rem 0;
+}
+
+.review .review-slider .box {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  padding: 1.4rem;
+  height: 300px;
+  width: 385px;
+  margin: 15px;
+}
+
+.review .review-slider .box .fa-quote-left {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 2.5rem;
+  color: #ccc;
+  z-index: -1;
+}
+
+.review .review-slider .box .fa-quote-right {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  color: #ccc;
+  z-index: -1;
+}
+
+.review .review-slider .box:hover .fa-quote-left {
+  top: -3rem;
+}
+
+.review .review-slider .box:hover .fa-quote-right {
+  bottom: -3rem;
+}
+
+.review .review-slider .box img {
+  height: 4.3rem;
+  width: 4.3rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.review .review-slider .box .stars {
+  padding: 0.4rem 0;
+}
+
+.review .review-slider .box .stars i {
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+
+.review .review-slider .box p {
+  font-size: 1rem;
+  color: var(--main-color);
+  padding: 0.4rem 0;
+  line-height: 1.4;
+}
+
+.review .review-slider .box h3 {
+  font-size: 1.5rem;
+  color: var(--brown-color);
+  line-height: 0.5;
+  padding-top: 4px;
+}
+
+.review .review-slider .box span {
+  font-size: 1.5rem;
+  color: var(--brown-color);
+}
+
+
+/* contact */
+.book {
+  background: url("images/table.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+}
+
+.book form {
+  margin: 0 auto 1.6rem auto;
+  max-width: 40rem;
+  border-radius: var(--border-radius-hover);
+  padding: 2rem;
+  border: var(--border);
+}
+
+.book form .box {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  background: none;
+  text-transform: none;
+  color: var(--brown-color);
+  border: var(--border);
+  margin: 0.6rem 0;
+}
+
+.book form .box:focus {
+  border: var(--border-hover);
+}
+
+.book form textarea {
+  height: 10rem;
+  resize: none;
+}
+/*footer*/
+#footer {
+  background-color: white;
+  color: #461111;
+  text-align: center;
+}
+.foot {
+  color: #461111;
+}
+.ico {
+  padding: 1%;
+}
